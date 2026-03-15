@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monopoly Project</title>
+    <meta
+      name="description"
+      content="Monopoly Project — современная минималистичная интерпретация онлайн-игры в духе Monopoly One."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Syne:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="is-loading">
+    <div class="intro" id="intro" aria-hidden="true">
+      <div class="intro-inner">
+        <div class="intro-logo" aria-hidden="true"></div>
+        <div class="intro-title-wrap">
+          <p class="intro-title">Monopoly Project</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="status-banner" id="statusBanner" hidden>
+      <p>Открыты новые возможности</p>
+    </div>
+
+    <a class="debug-trigger" id="debugTrigger" href="debug.html" hidden>
+      Debug Menu
+    </a>
+
+    <div class="page-shell">
+      <header class="topbar">
+        <nav class="nav">
+          <button class="nav-link nav-link-primary" id="startGameButton" type="button">
+            Начать игру
+          </button>
+          <a class="nav-link" href="editorial.html">Наша редакция</a>
+          <a class="nav-link" href="friends.html">Друзья</a>
+          <a class="nav-link" href="inventory.html">Инвентарь</a>
+          <a class="nav-link" href="market.html">Маркет</a>
+        </nav>
+
+        <div class="topbar-actions">
+          <a class="icon-button" id="profileButton" href="profile.html" aria-label="Профиль">
+            <span class="icon icon-profile" aria-hidden="true"></span>
+          </a>
+          <button class="icon-button" type="button" aria-label="Настройки">
+            <span class="icon icon-settings" aria-hidden="true"></span>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" id="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Digital Board Game Experience</p>
+            <h1>Приглашаем к игре</h1>
+            <p class="hero-text">
+              Современная цифровая интерпретация классической настольной игры,
+              где стратегия, риск и темп партии собираются в одном аккуратном
+              пространстве.
+            </p>
+
+            <div class="hero-actions">
+              <button class="button" id="heroStartButton" type="button">Начать игру</button>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="visual-frame visual-frame-large">
+              <span class="frame-label">Game Space</span>
+            </div>
+            <div class="visual-grid">
+              <div class="visual-frame visual-frame-small">
+                <span class="frame-label">Strategy</span>
+              </div>
+              <div class="visual-frame visual-frame-tall">
+                <span class="frame-label">Momentum</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="about" id="about">
+          <div class="section-heading">
+            <p class="eyebrow">About The Game</p>
+            <h2>Что это за игра.</h2>
+          </div>
+
+          <div class="about-grid">
+            <article class="card card-wide">
+              <p class="card-index">01</p>
+              <h3>Классика в цифровом формате</h3>
+              <p>
+                Monopoly Project вдохновлен классической “Монополией”: игроки
+                покупают собственность, развивают активы, принимают рискованные
+                решения и пытаются обойти соперников по капиталу.
+              </p>
+            </article>
+
+            <article class="card">
+              <p class="card-index">02</p>
+              <h3>Как проходит партия</h3>
+              <p>
+                Каждый ход влияет на темп игры: покупка улиц, аренда, обмен,
+                контроль над полем и борьба за преимущество формируют живую
+                соревновательную сессию.
+              </p>
+            </article>
+
+            <article class="card">
+              <p class="card-index">03</p>
+              <h3>Для кого проект</h3>
+              <p>
+                Это концепт современного веб-сайта для онлайн-игры: минимализм,
+                атмосфера и понятная подача, которая подходит и для портфолио, и
+                для будущего игрового продукта.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <footer class="site-footer">
+          <div class="footer-info">
+            <p class="eyebrow">Project Info</p>
+            <p class="footer-line"><strong>Автор:</strong> Westernoff</p>
+            <p class="footer-line"><strong>Референс:</strong> MonopolyOne</p>
+          </div>
+
+          <div class="footer-note">
+            <p>
+              Проект создан не в целях коммерческого использования, а как
+              концепт и пример для портфолио с дальнейшим развитием.
+            </p>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <div class="auth-modal" id="authModal" hidden>
+      <div class="auth-backdrop" id="authBackdrop"></div>
+      <section
+        class="auth-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="authTitle"
+      >
+        <button class="auth-close" id="authClose" type="button" aria-label="Закрыть">
+          <span></span>
+          <span></span>
+        </button>
+        <p class="eyebrow">Account Access</p>
+        <h2 id="authTitle">Вход в аккаунт</h2>
+        <p class="auth-text">
+          Введите логин и пароль, чтобы открыть игровой профиль. Для базового
+          admin-входа используйте `admin / admin`.
+        </p>
+
+        <form class="auth-form" id="authForm">
+          <label class="auth-field">
+            <span>Логин</span>
+            <input id="loginInput" name="login" type="text" autocomplete="username" required />
+          </label>
+
+          <label class="auth-field">
+            <span>Пароль</span>
+            <input
+              id="passwordInput"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+            />
+          </label>
+
+          <p class="auth-feedback" id="authFeedback" aria-live="polite"></p>
+
+          <button class="button auth-submit" type="submit">Войти</button>
+        </form>
+      </section>
+    </div>
+
+    <div class="auth-modal" id="gameModeModal" hidden>
+      <div class="auth-backdrop" id="gameModeBackdrop"></div>
+      <section
+        class="auth-dialog game-mode-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="gameModeTitle"
+      >
+        <button class="auth-close" id="gameModeClose" type="button" aria-label="Закрыть">
+          <span></span>
+          <span></span>
+        </button>
+        <p class="eyebrow">Game Mode</p>
+        <h2 id="gameModeTitle">Выберите режим</h2>
+        <p class="auth-text">
+          Для первого игрового цикла уже готов базовый сценарий запуска партии с
+          ботами. Поиск живой игры подключим следующим этапом.
+        </p>
+
+        <div class="game-mode-actions">
+          <button class="button" id="playBotsButton" type="button">Играть с ботами</button>
+          <button class="button button-ghost" id="searchGameButton" type="button">
+            Поиск игры
+          </button>
+        </div>
+
+        <p class="auth-feedback" id="gameModeFeedback" aria-live="polite"></p>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

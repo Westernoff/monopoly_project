@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Друзья | Monopoly Project</title>
+    <meta
+      name="description"
+      content="Раздел друзей в Monopoly Project с базовым сценарием отправки заявки."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Syne:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="is-ready friends-page">
+    <div class="friends-toast" id="friendsToast" hidden>
+      <p id="friendsToastText">Запрос дружбы отправлен.</p>
+    </div>
+
+    <div class="page-shell">
+      <header class="topbar">
+        <nav class="nav">
+          <a class="nav-link nav-link-primary" href="index.html">Начать игру</a>
+          <a class="nav-link" href="editorial.html">Наша редакция</a>
+          <a class="nav-link is-current" href="friends.html">Друзья</a>
+          <a class="nav-link" href="inventory.html">Инвентарь</a>
+          <a class="nav-link" href="market.html">Маркет</a>
+        </nav>
+
+        <div class="topbar-actions">
+          <a class="icon-button" href="profile.html" aria-label="Профиль">
+            <span class="icon icon-profile" aria-hidden="true"></span>
+          </a>
+          <button class="icon-button" type="button" aria-label="Настройки">
+            <span class="icon icon-settings" aria-hidden="true"></span>
+          </button>
+        </div>
+      </header>
+
+      <main class="friends-main">
+        <section class="friends-panel">
+          <p class="eyebrow">Friends</p>
+          <h1>Добавляйте игроков в свой круг.</h1>
+          <p class="friends-text">
+            Здесь будут храниться дружеские связи, приглашения и быстрый доступ к
+            совместным игровым сессиям.
+          </p>
+          <button class="button" id="openFriendModal" type="button">Добавить друзей</button>
+
+          <section class="friends-notifications">
+            <div class="section-heading friends-heading">
+              <p class="eyebrow">Notifications</p>
+              <h2>Уведомления</h2>
+            </div>
+            <div class="friends-notification-list" id="friendsNotificationList">
+              <article class="friend-notification friend-notification-empty">
+                <p>Пока что запросов нет.</p>
+              </article>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <div class="auth-modal" id="friendModal" hidden>
+      <div class="auth-backdrop" id="friendBackdrop"></div>
+      <section
+        class="auth-dialog friend-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="friendModalTitle"
+      >
+        <button class="auth-close" id="friendClose" type="button" aria-label="Закрыть">
+          <span></span>
+          <span></span>
+        </button>
+        <p class="eyebrow">Friend Request</p>
+        <h2 id="friendModalTitle">Добавить друзей</h2>
+        <p class="auth-text">
+          Введите никнейм игрока. После отправки на его профиль уйдет локальное
+          уведомление о запросе дружбы.
+        </p>
+
+        <form class="auth-form" id="friendForm">
+          <label class="auth-field">
+            <span>Никнейм друга</span>
+            <input
+              id="friendNickname"
+              name="friend_nickname"
+              type="text"
+              autocomplete="off"
+              placeholder="Например, PlayerOne"
+              required
+            />
+          </label>
+
+          <p class="auth-feedback" id="friendFeedback" aria-live="polite"></p>
+
+          <button class="button auth-submit" type="submit">Отправить запрос</button>
+        </form>
+      </section>
+    </div>
+
+    <script src="friends.js"></script>
+  </body>
+</html>

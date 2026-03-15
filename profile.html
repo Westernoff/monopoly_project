@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Профиль | Monopoly Project</title>
+    <meta
+      name="description"
+      content="Настройки профиля в Monopoly Project: никнейм и аватар пользователя."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Syne:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="is-ready profile-page">
+    <div class="page-shell">
+      <header class="topbar">
+        <nav class="nav">
+          <a class="nav-link nav-link-primary" href="index.html">Начать игру</a>
+          <a class="nav-link" href="editorial.html">Наша редакция</a>
+          <a class="nav-link" href="friends.html">Друзья</a>
+          <a class="nav-link" href="inventory.html">Инвентарь</a>
+          <a class="nav-link" href="market.html">Маркет</a>
+        </nav>
+
+        <div class="topbar-actions">
+          <a class="icon-button is-active" href="profile.html" aria-label="Профиль">
+            <span class="icon icon-profile" aria-hidden="true"></span>
+          </a>
+          <button class="icon-button" type="button" aria-label="Настройки">
+            <span class="icon icon-settings" aria-hidden="true"></span>
+          </button>
+        </div>
+      </header>
+
+      <main class="profile-main">
+        <section class="profile-panel">
+          <div class="profile-preview">
+            <p class="eyebrow">Profile</p>
+            <div class="profile-avatar" id="profileAvatarPreview">
+              <span id="profileAvatarInitial">M</span>
+            </div>
+            <h1 id="profileDisplayName">Monopoly Player</h1>
+            <p class="profile-login" id="profileLoginLabel">@guest</p>
+          </div>
+
+          <section class="profile-settings">
+            <div class="section-heading profile-heading">
+              <p class="eyebrow">Settings</p>
+              <h2>Настройки профиля</h2>
+            </div>
+
+            <form class="profile-form" id="profileForm">
+              <label class="auth-field">
+                <span>Никнейм</span>
+                <input
+                  id="profileNickname"
+                  name="profile_nickname"
+                  type="text"
+                  autocomplete="nickname"
+                  placeholder="Введите никнейм"
+                  required
+                />
+              </label>
+
+              <label class="auth-field">
+                <span>Аватарка</span>
+                <input id="profileAvatar" name="profile_avatar" type="file" accept="image/*" />
+              </label>
+
+              <p class="auth-feedback" id="profileFeedback" aria-live="polite"></p>
+
+              <div class="profile-actions">
+                <button class="button" type="submit">Сохранить изменения</button>
+                <button class="button button-ghost" id="resetAvatarButton" type="button">
+                  Убрать аватарку
+                </button>
+              </div>
+            </form>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="profile.js"></script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Игра с ботами | Monopoly Project</title>
+    <meta
+      name="description"
+      content="Игровое поле Monopoly Project с базовой полноценной партией против ботов."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Syne:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="game-page game-loading">
+    <div class="game-intro" id="gameIntro">
+      <div class="intro-inner">
+        <div class="intro-logo" aria-hidden="true"></div>
+        <div class="intro-title-wrap">
+          <p class="intro-title">Monopoly Project</p>
+        </div>
+      </div>
+
+      <div class="game-loading-status">
+        <div class="game-loading-spinner" aria-hidden="true"></div>
+        <p class="game-loading-title">Скоро начнем игру</p>
+        <p class="game-loading-subtitle" id="gameLoadingSubtitle">Раскидываем кубики...</p>
+      </div>
+    </div>
+
+    <div class="page-shell game-shell">
+      <main class="game-main game-main-full">
+        <section class="game-board game-board-live">
+          <div class="game-grid" id="gameGrid">
+            <div class="game-center-panel">
+              <p class="eyebrow">Classic Match</p>
+              <h1>Монополия против ботов</h1>
+              <p class="game-board-text" id="turnStatus">
+                Загружаем состояние партии...
+              </p>
+
+              <div class="dice-display" id="diceDisplay">
+                <div class="die" id="dieOne">-</div>
+                <div class="die" id="dieTwo">-</div>
+              </div>
+
+              <div class="game-actions">
+                <button class="button" id="rollDiceButton" type="button">Бросить кубики</button>
+                <button class="button" id="buyPropertyButton" type="button" hidden>
+                  Купить предприятие
+                </button>
+                <button class="button button-ghost" id="endTurnButton" type="button" hidden>
+                  Завершить ход
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="game-sidebar">
+          <section class="game-card">
+            <p class="eyebrow">Players</p>
+            <div class="game-player-list" id="gamePlayerList"></div>
+          </section>
+
+          <section class="game-card">
+            <p class="eyebrow">Cell</p>
+            <h2 id="cellTitle">Ожидаем старт</h2>
+            <p class="game-board-text" id="cellDescription">
+              Бросьте кубики, чтобы начать движение по полю.
+            </p>
+          </section>
+
+          <section class="game-card">
+            <p class="eyebrow">Game Log</p>
+            <div class="game-log" id="gameLog"></div>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <button class="game-exit-button" id="gameExitButton" type="button" aria-label="Выйти из игры">
+      <span class="game-exit-icon" aria-hidden="true"></span>
+      <span>Выйти из игры</span>
+    </button>
+
+    <div class="auth-modal" id="exitConfirmModal" hidden>
+      <div class="auth-backdrop" id="exitConfirmBackdrop"></div>
+      <section
+        class="auth-dialog game-exit-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="exitConfirmTitle"
+      >
+        <button class="auth-close" id="exitConfirmClose" type="button" aria-label="Закрыть">
+          <span></span>
+          <span></span>
+        </button>
+        <p class="eyebrow">Exit Match</p>
+        <h2 id="exitConfirmTitle">Выйти из текущей игры?</h2>
+        <p class="auth-text">
+          Текущая партия будет завершена. Вы всегда сможете начать новую игру с
+          ботами снова.
+        </p>
+
+        <div class="game-mode-actions">
+          <a class="button" href="index.html">Да, выйти</a>
+          <button class="button button-ghost" id="exitCancelButton" type="button">
+            Остаться в игре
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>

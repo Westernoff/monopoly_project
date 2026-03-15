@@ -1673,6 +1673,160 @@ body.game-ready .game-intro {
   }
 }
 
+@media (max-width: 900px) {
+  .page-shell {
+    width: min(calc(100% - 24px), var(--container));
+    padding: 18px 0 44px;
+  }
+
+  .topbar {
+    align-items: stretch;
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .nav-link {
+    width: 100%;
+    min-height: 46px;
+    padding: 0 12px;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .topbar-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .hero {
+    gap: 24px;
+    padding: 44px 0 34px;
+  }
+
+  .hero h1,
+  .section-heading h2,
+  .friends-panel h1,
+  .inventory-panel h1,
+  .editorial-heading h1,
+  .debug-panel h1 {
+    max-width: none;
+    font-size: clamp(2.4rem, 8vw, 4rem);
+  }
+
+  .hero-text,
+  .friends-text,
+  .inventory-empty-text,
+  .debug-text {
+    max-width: none;
+    font-size: 0.98rem;
+  }
+
+  .hero-actions,
+  .game-actions,
+  .profile-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .button,
+  .game-actions .button,
+  .profile-actions .button,
+  .game-mode-actions .button {
+    width: 100%;
+  }
+
+  .site-footer,
+  .profile-panel,
+  .game-main-full {
+    grid-template-columns: 1fr;
+  }
+
+  .friends-panel,
+  .inventory-panel,
+  .profile-preview,
+  .profile-settings,
+  .debug-panel,
+  .debug-card,
+  .editorial-empty,
+  .editorial-post {
+    padding: 28px 22px;
+    border-radius: 28px;
+  }
+
+  .inventory-head {
+    grid-template-columns: 1fr;
+  }
+
+  .debug-users {
+    grid-template-columns: 1fr;
+  }
+
+  .game-board-live {
+    min-height: auto;
+  }
+
+  .game-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+    min-height: auto;
+  }
+
+  .game-center-panel {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    order: -1;
+    padding: 24px 18px;
+  }
+
+  .game-board-cell {
+    min-height: 108px;
+    padding: 12px;
+  }
+
+  .game-board-cell.top-left,
+  .game-board-cell.top-2,
+  .game-board-cell.top-3,
+  .game-board-cell.top-4,
+  .game-board-cell.top-right,
+  .game-board-cell.right-2,
+  .game-board-cell.right-3,
+  .game-board-cell.right-4,
+  .game-board-cell.bottom-right,
+  .game-board-cell.bottom-4,
+  .game-board-cell.bottom-3,
+  .game-board-cell.bottom-2,
+  .game-board-cell.bottom-left,
+  .game-board-cell.left-4,
+  .game-board-cell.left-3,
+  .game-board-cell.left-2 {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .board-cell-top,
+  .board-cell-bottom {
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+  }
+
+  .board-tokens {
+    justify-content: start;
+  }
+
+  .game-sidebar {
+    gap: 14px;
+  }
+}
+
 @media (max-width: 760px) {
   body::before {
     inset: 10px;
@@ -1680,8 +1834,8 @@ body.game-ready .game-intro {
   }
 
   .page-shell {
-    width: min(calc(100% - 20px), var(--container));
-    padding-top: 14px;
+    width: min(calc(100% - 16px), var(--container));
+    padding-top: 10px;
   }
 
   .status-banner {
@@ -1719,124 +1873,88 @@ body.game-ready .game-intro {
   }
 
   .topbar {
-    flex-wrap: wrap;
-    border-radius: 28px;
-    padding: 16px;
+    border-radius: 24px;
+    padding: 12px;
   }
 
   .nav {
-    order: 1;
-    width: 100%;
-    justify-content: center;
-    gap: 12px;
-    font-size: 0.68rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    font-size: 0.64rem;
   }
 
   .nav-link {
-    flex: 1 1 140px;
+    min-height: 42px;
+    padding: 10px 8px;
+    border-radius: 18px;
   }
 
   .topbar-actions {
-    margin-left: auto;
+    gap: 8px;
   }
 
   .auth-dialog {
-    padding: 26px 20px 20px;
+    width: min(100%, calc(100vw - 16px));
+    padding: 22px 16px 16px;
+    border-radius: 22px;
   }
 
   .editorial-empty {
-    padding: 36px 22px;
-    border-radius: 28px;
+    padding: 28px 16px;
+    border-radius: 22px;
   }
 
   .footer-info,
   .footer-note {
-    padding: 22px 20px;
-    border-radius: 24px;
+    padding: 18px 16px;
+    border-radius: 20px;
   }
 
   .editorial-post {
-    padding: 24px 20px;
-    border-radius: 24px;
+    padding: 20px 16px;
+    border-radius: 20px;
   }
 
   .friends-panel {
-    padding: 30px 20px;
-    border-radius: 28px;
+    padding: 24px 16px;
+    border-radius: 22px;
   }
 
   .inventory-panel {
-    padding: 30px 20px;
-    border-radius: 28px;
-  }
-
-  .inventory-head {
-    grid-template-columns: 1fr;
+    padding: 24px 16px;
+    border-radius: 22px;
   }
 
   .inventory-empty {
-    padding: 26px 20px;
-  }
-
-  .profile-panel {
-    grid-template-columns: 1fr;
-  }
-
-  .game-main {
-    grid-template-columns: 1fr;
+    padding: 20px 16px;
+    border-radius: 20px;
   }
 
   .profile-preview,
   .profile-settings {
-    padding: 28px 20px;
-    border-radius: 28px;
+    padding: 24px 16px;
+    border-radius: 22px;
   }
 
   .debug-panel,
   .debug-card {
-    padding: 28px 20px;
-    border-radius: 28px;
+    padding: 24px 16px;
+    border-radius: 22px;
   }
 
   .game-board,
   .game-card {
-    border-radius: 28px;
+    border-radius: 22px;
   }
 
   .game-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-rows: auto;
-    min-height: auto;
-  }
-
-  .game-center-panel {
-    grid-column: 1 / -1;
-    grid-row: auto;
-    order: -1;
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 
   .game-board-cell {
-    min-height: 120px;
-  }
-
-  .game-board-cell.top-left,
-  .game-board-cell.top-2,
-  .game-board-cell.top-3,
-  .game-board-cell.top-4,
-  .game-board-cell.top-right,
-  .game-board-cell.right-2,
-  .game-board-cell.right-3,
-  .game-board-cell.right-4,
-  .game-board-cell.bottom-right,
-  .game-board-cell.bottom-4,
-  .game-board-cell.bottom-3,
-  .game-board-cell.bottom-2,
-  .game-board-cell.bottom-left,
-  .game-board-cell.left-4,
-  .game-board-cell.left-3,
-  .game-board-cell.left-2 {
-    grid-column: auto;
-    grid-row: auto;
+    min-height: 92px;
+    border-radius: 18px;
   }
 
   .game-exit-button {
@@ -1846,25 +1964,151 @@ body.game-ready .game-intro {
   }
 
   .hero {
-    padding-top: 48px;
+    padding-top: 32px;
   }
 
   .hero h1 {
-    font-size: clamp(3rem, 16vw, 4.6rem);
+    font-size: clamp(2.2rem, 13vw, 3.5rem);
   }
 
   .hero-actions,
   .visual-grid {
-    grid-template-columns: 1fr;
     flex-direction: column;
   }
 
   .visual-frame-large {
-    height: 320px;
+    height: 240px;
   }
 
   .visual-frame-tall {
     margin-top: 0;
-    height: 220px;
+    height: 180px;
+  }
+
+  .dice-display {
+    margin-top: 22px;
+  }
+
+  .die {
+    width: 54px;
+    height: 54px;
+    font-size: 1.5rem;
+  }
+
+  .game-card {
+    padding: 20px 16px;
+  }
+
+  .profile-avatar {
+    width: 104px;
+    height: 104px;
+    border-radius: 24px;
+    margin-bottom: 18px;
+  }
+
+  .profile-avatar span {
+    font-size: 2.2rem;
+  }
+
+  .friends-notifications,
+  .inventory-empty,
+  .game-actions {
+    margin-top: 24px;
+  }
+
+  .site-footer {
+    gap: 14px;
+    padding-top: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  body::before {
+    inset: 6px;
+    border-radius: 18px;
+  }
+
+  .status-banner,
+  .friends-toast {
+    min-width: calc(100vw - 12px);
+    padding: 12px 14px;
+  }
+
+  .status-banner p,
+  .friends-toast p,
+  .game-loading-title {
+    font-size: 0.7rem;
+  }
+
+  .intro-inner {
+    width: min(100vw - 24px, 320px);
+    transform: translateX(-10px);
+  }
+
+  .intro-title {
+    font-size: 1.1rem;
+    letter-spacing: 0.06em;
+  }
+
+  .nav {
+    grid-template-columns: 1fr;
+  }
+
+  .icon-button {
+    width: 42px;
+    height: 42px;
+  }
+
+  .button,
+  .nav-link {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+  }
+
+  .section-heading h2,
+  .friends-panel h1,
+  .inventory-panel h1,
+  .editorial-heading h1,
+  .debug-panel h1,
+  .profile-preview h1,
+  .game-center-panel h1 {
+    font-size: clamp(1.9rem, 10vw, 2.6rem);
+  }
+
+  .hero-text,
+  .card p,
+  .friends-text,
+  .inventory-empty-text,
+  .game-board-text,
+  .debug-text,
+  .auth-text {
+    font-size: 0.92rem;
+  }
+
+  .game-center-panel,
+  .game-board,
+  .game-card {
+    padding: 16px 14px;
+  }
+
+  .board-cell-name {
+    font-size: 0.88rem;
+  }
+
+  .board-cost,
+  .board-owner,
+  .board-cell-type {
+    font-size: 0.64rem;
+    letter-spacing: 0.05em;
+  }
+
+  .game-player {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .game-log-entry {
+    padding: 10px 12px;
+    font-size: 0.9rem;
   }
 }
